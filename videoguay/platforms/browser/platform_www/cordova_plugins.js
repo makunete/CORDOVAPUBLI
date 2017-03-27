@@ -29,6 +29,14 @@ module.exports = [
         "id": "cordova-plugin-camera.CameraProxy",
         "pluginId": "cordova-plugin-camera",
         "runs": true
+    },
+    {
+        "file": "plugins/cordova-plugin-admob/www/AdMob.js",
+        "id": "cordova-plugin-admob.AdMob",
+        "pluginId": "cordova-plugin-admob",
+        "clobbers": [
+            "window.plugins.AdMob"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -36,7 +44,9 @@ module.exports.metadata =
 {
     "cordova-plugin-compat": "1.1.0",
     "cordova-plugin-camera": "2.4.0",
-    "cordova-plugin-whitelist": "1.3.2"
+    "cordova-plugin-whitelist": "1.3.2",
+    "cordova-admobsdk": "1.0.4",
+    "cordova-plugin-admob": "3.2.4"
 }
 // BOTTOM OF METADATA
 });

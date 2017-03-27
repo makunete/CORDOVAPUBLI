@@ -28,6 +28,20 @@ var app = {
     // 'pause', 'resume', etc.
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
+
+        window.plugins.AdMob.setOptions( {
+          publisherId: "ca-app-pub-6171602264594325/4074471691",
+          interstitialAdId: "ca-app-pub-6171602264594325~8644272091",
+          bannerAtTop: false, // set to true, to put banner at top
+          overlap: false, // set to true, to allow banner overlap webview
+          offsetTopBar: false, // set to true to avoid ios7 status bar overlap
+          isTesting: false, // receiving test ad
+          autoShow: true // auto show interstitial ad when loaded
+        });
+        // display the banner at startup
+        window.plugins.AdMob.createBannerView();
+
+
     },
 
     // Update DOM on a Received Event
