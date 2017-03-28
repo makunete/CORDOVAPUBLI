@@ -16,10 +16,20 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+ function fesalgo(){
+ 	window.plugins.AdMob.createInterstitialView();
+ 	alert("algo")
+ 	window.plugins.AdMob.showInterstitialAd(
+          true, 
+          function(){},
+          function(e){alert(JSON.stringify(e));}
+        );
+ }
 var app = {
     // Application Constructor
     initialize: function() {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+        document.getElementById("boto").onclick=fesalgo;
     },
 
     // deviceready Event Handler
@@ -31,7 +41,7 @@ var app = {
 
         window.plugins.AdMob.setOptions( {
           publisherId: "ca-app-pub-6171602264594325/4074471691",
-          interstitialAdId: "ca-app-pub-6171602264594325~8644272091",
+          interstitialAdId: "ca-app-pub-6171602264594325/3964576897",
           bannerAtTop: false, // set to true, to put banner at top
           overlap: false, // set to true, to allow banner overlap webview
           offsetTopBar: false, // set to true to avoid ios7 status bar overlap
@@ -40,6 +50,7 @@ var app = {
         });
         // display the banner at startup
         window.plugins.AdMob.createBannerView();
+
 
 
     },
